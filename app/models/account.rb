@@ -1,6 +1,6 @@
 class Account < ApplicationRecord
   has_many :friends
-  before_save :email_checker
+  before_create :email_checker
 
   def self.connect_email(emails)
     account_email = emails.first
@@ -19,7 +19,7 @@ class Account < ApplicationRecord
   end
 
   def email_checker
-    self.email.match(/^.+@.+$/).present?
+    self.email.match(/^.+@.+$/).present? ? true : throw(:abort)
   end
 
 end
