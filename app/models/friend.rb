@@ -4,4 +4,5 @@ class Friend < ApplicationRecord
 
   validates :account_id, :friend_account_id,  presence: true
   validates :account_id, uniqueness: { scope: :friend_account_id}
+
 end

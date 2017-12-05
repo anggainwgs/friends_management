@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 20171204171350) do
 
   create_table "subscribes", force: :cascade do |t|
     t.integer "account_id"
-    t.integer "target_account_id"
+    t.integer "request_account_id"
     t.boolean "block", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_subscribes_on_account_id"
-    t.index ["target_account_id"], name: "index_subscribes_on_target_account_id"
+    t.index ["request_account_id"], name: "index_subscribes_on_request_account_id"
   end
 
 end
