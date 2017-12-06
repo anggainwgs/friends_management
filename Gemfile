@@ -40,6 +40,12 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'factory_bot_rails'
+  gem 'simplecov', require: false, group: :test
+  gem 'database_cleaner', require: false, group: :test
+  gem 'shoulda-matchers', '~> 3.1', require: false, group: :test
+  gem 'faker', require: false, group: :test
 end
 
 group :development do

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get  :common_friends
       post :add_subscribe
       post :block_subscribe
+      post :status
     end
   end
 end

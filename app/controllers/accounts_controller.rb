@@ -42,6 +42,24 @@ class AccountsController < ApplicationController
     end
   end
 
+  def status
+    status = Status.add(params[:sender], params[:text])
+    if status
+      render json: { success: status.first, recipients: status.last}
+    else
+      render_errors(status.last, 401)
+    end
+  end
+
+  def create  
+     account = Account.new(email: params[:email])
+    if account.save
+      render json: { success: true, message: "add account success" }
+    else
+      render_errors(account.errors.messages, 401)
+    end
+  end
+
   def subscribe_params
     @requestor = params[:requestor]
     @target    = params[:target]

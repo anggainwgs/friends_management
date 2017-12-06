@@ -1,6 +1,10 @@
 class Account < ApplicationRecord
   has_many :friends
   has_many :subscribes
+  has_many :statuses
+
+  validates :email,  presence: true
+
   before_create :email_checker
 
   def self.connect_email(emails)
