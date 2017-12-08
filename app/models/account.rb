@@ -20,8 +20,7 @@ class Account < ApplicationRecord
     end
   end
 
-  def self.find_common_friend(params_emails)
-    emails = eval(params_emails) 
+  def self.find_common_friend(emails) 
     common_friend_ids = Friend.joins(:account).where("accounts.email IN (?)",emails).group_by(&:friend_account_id).map{|x| x.first if x.last.count.eql?(2) }
 
     self.where(id: common_friend_ids)

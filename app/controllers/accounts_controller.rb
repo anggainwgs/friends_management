@@ -1,5 +1,8 @@
 class AccountsController < ApplicationController
   before_action :subscribe_params, only: [:add_subscribe, :block_subscribe]
+  before_action :set_format_response
+
+  def landing;end
 
   def index
     account = Account.where(email: params[:email]).first
@@ -42,16 +45,16 @@ class AccountsController < ApplicationController
     end
   end
 
-  def status
+  def add_update
     status = Status.add(params[:sender], params[:text])
-    if status
+    if status.first
       render json: { success: status.first, recipients: status.last}
     else
       render_errors(status.last, 401)
     end
   end
 
-  def create  
+  def create
      account = Account.new(email: params[:email])
     if account.save
       render json: { success: true, message: "add account success" }
