@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:4000/ -->
+<html style="font-size: small;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>API documentation</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id="container">
+        <ul class="breadcrumb">
+  <li class="active">
+    <h3><a href="#">FriendsManagement 1.0</a></li></h3>
+</ul>
+
+<div>
+<p>Another API description</p>
+</div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a data-toggle="collapse" href="#account_connect" aria-expanded="false" >POST /accounts/connect</a>
+            </td>
+            <td width="60%">
+              <p>#1 create a friend connection between two email addresses</p>
+              <div class="collapse" id="account_connect">
+                <div class="card card-body">
+                  <p><b>params example: </b></p>
+                  <p>{ friends: ['andy@example.com', 'john@example.com'] }</p>
+                  <p><b>success response:</b></p>
+                  <p>{ "success": true }</p>
+                  <p><b>errors response:</b></p>
+                  <p>{ "error": message, "status": 401 }</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a data-toggle="collapse" href="#friends_list" aria-expanded="false" >GET /accounts</a>
+            </td>
+            <td width="60%">
+              <p>#2 show friends list for an email address.</p>
+              <div class="collapse" id="friends_list">
+                <div class="card card-body">
+                  <p><b>params example: </b></p>
+                  <p>{ "email": 'andy@example.com', 'john@example.com' }</p>
+                  <p><b>success response:</b></p>
+                  <p>{ "success": true, "friends": ['john@example.com', 'common@example.com'],"count": 2}</p>
+                  <p><b>errors response:</b></p>
+                  <p>{ "error": message, "status": 401 }</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a data-toggle="collapse" href="#common_friends" aria-expanded="false" >GET /accounts/common_friends</a>
+            </td>
+            <td width="60%">
+              <p>#3 retrieve the common friends list between two email addresses.</p>
+              <div class="collapse" id="common_friends">
+                <div class="card card-body">
+                  <p><b>params example: </b></p>
+                  <p>{ "emails": ['andy@example.com', 'john@example.com'] }</p>
+                  <p><b>success response:</b></p>
+                  <p>{ "success": true, "friends": ['common@example.com'] }</p>
+                  <p><b>errors response:</b></p>
+                  <p>{ "error": message, "status": 401 }</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a data-toggle="collapse" href="#add_subscribe" aria-expanded="false" >POST /accounts/add_subscribe</a>
+            </td>
+            <td width="60%">
+              <p>#4 subscribe to updates from an email address.</p>
+              <div class="collapse" id="add_subscribe">
+                <div class="card card-body">
+                  <p><b>params example: </b></p>
+                  <p>{ "requestor": 'andy@example.com', "target": 'john@example.com' }</p>
+                  <p><b>success response:</b></p>
+                  <p>{ "success": true }</p>
+                  <p><b>errors response:</b></p>
+                  <p>{ "error": message, "status": 401 }</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a data-toggle="collapse" href="#block_subscribe" aria-expanded="false" >POST /accounts/block_subscribe</a>
+            </td>
+            <td width="60%">
+              <p>#5 to block updates from an email address.</p>
+              <div class="collapse" id="block_subscribe">
+                <div class="card card-body">
+                  <p><b>params example: </b></p>
+                  <p>{ "requestor": 'andy@example.com', "target": 'john@example.com' }</p>
+                  <p><b>success response:</b></p>
+                  <p>{ "success": true }</p>
+                  <p><b>errors response:</b></p>
+                  <p>{ "error": message, "status": 401 }</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a data-toggle="collapse" href="#account_update" aria-expanded="false" >POST /accounts/add_update</a>
+            </td>
+            <td width="60%">
+              <p>#6 retrieve all email addresses that can receive updates from an email address.</p>
+              <div class="collapse" id="account_update">
+                <div class="card card-body">
+                  <p><b>params example: </b></p>
+                  <p>{ "sender": 'andy@example.com', "text": 'hello john@example.com' }</p>
+                  <p><b>success response:</b></p>
+                  <p>{ "success": true, "recipients": ['john@example.com','common@example.com'] }</p>
+                  <p><b>errors response:</b></p>
+                  <p>{ "error": message, "status": 401 }</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a data-toggle="collapse" href="#add_account" aria-expanded="false" >POST /account</a>
+            </td>
+            <td width="60%">
+              <p>#additional add email account</p>
+              <div class="collapse" id="add_account">
+                <div class="card card-body">
+                  <p><b>params example: </b></p>
+                  <p>{ "email": 'andy@example.com' }</p>
+                  <p><b>success response:</b></p>
+                  <p>{ "success": true, "message": message }</p>
+                  <p><b>errors response:</b></p>
+                  <p>{ "error": message, "status": 401 }</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</body></html>

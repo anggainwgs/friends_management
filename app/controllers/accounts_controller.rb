@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   before_action :subscribe_params, only: [:add_subscribe, :block_subscribe]
-  before_action :set_format_response
+  before_action :set_format_response, except: [:landing]
 
   def landing;end
 
