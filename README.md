@@ -1,24 +1,19 @@
-# README
+# Simple Friend Management
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Develop an API server that does simple "Friend Management"
+with API end point:
 
-Things you may want to cover:
+* create a friend connection between two email addresses.
 
-* Ruby version
+* retrieve the friends list for an email address.
 
-* System dependencies
+* retrieve the common friends list between two email
 
-* Configuration
+* subscribe to updates from an email address.
 
-* Database creation
+* block updates from an email address.
 
-* Database initialization
+* retrieve all email addresses that can receive updates from an
+email address.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Demo on heroku](http://fmapi.herokuapp.com)
